@@ -8,4 +8,5 @@ module xyz.itseve.javacalc {
 
     opens xyz.itseve.javacalc to javafx.fxml;
     exports xyz.itseve.javacalc;
+    exports xyz.itseve.shuntingyard;
 }
