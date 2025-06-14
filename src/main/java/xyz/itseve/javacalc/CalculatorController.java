@@ -10,10 +10,17 @@ public class CalculatorController {
     private boolean nextDelete = false;
 
     @FXML private TextField output;
-    @FXML private Button equalsButton;
 
+    @FXML private Button equalsButton;
     public Button getEqualsButton() {
         return equalsButton;
+    }
+
+    @FXML private void inputChanged() {
+        if (nextDelete) {
+            output.clear();
+            nextDelete = false;
+        }
     }
 
     @FXML private void numberClick(ActionEvent event) {

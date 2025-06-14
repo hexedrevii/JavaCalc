@@ -23,10 +23,13 @@ public class Entry extends Application {
             }
         });
 
+        // Set window minimum size.
+        stage.setMinHeight(400);
+        stage.setMinWidth(350);
+
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {
