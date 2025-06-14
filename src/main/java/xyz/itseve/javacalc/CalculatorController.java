@@ -7,9 +7,21 @@ import javafx.scene.control.TextField;
 import xyz.itseve.shuntingyard.ArithmeticExpression;
 
 public class CalculatorController {
+    private boolean nextDelete = false;
+
     @FXML private TextField output;
+    @FXML private Button equalsButton;
+
+    public Button getEqualsButton() {
+        return equalsButton;
+    }
 
     @FXML private void numberClick(ActionEvent event) {
+        if (nextDelete) {
+            output.clear();
+            nextDelete = false;
+        }
+
         Button self = (Button)event.getSource();
         output.appendText(self.getText());
     }
@@ -21,10 +33,28 @@ public class CalculatorController {
             output.setText("" + expr.evaluate());
         } catch (Exception e) {
             output.setText("Mathematical error.");
+
+            nextDelete = true;
+        }
+    }
+
+    @FXML private void delClick() {
+        if (nextDelete) {
+            output.clear();
+            nextDelete = false;
+
+            return;
+        }
+
+        String text = output.getText();
+        if (!output.getText().isEmpty()) {
+            String cut = (text.substring(0, text.length() - 1));
+            output.setText(cut);
         }
     }
 
     @FXML private void clearClick() {
         output.clear();
+        if (nextDelete) nextDelete = false;
     }
 }

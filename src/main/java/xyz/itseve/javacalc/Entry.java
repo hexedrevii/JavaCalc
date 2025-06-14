@@ -3,6 +3,7 @@ package xyz.itseve.javacalc;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,12 +14,19 @@ public class Entry extends Application {
         // Load the GUI.
         FXMLLoader fxmlLoader = new FXMLLoader(Entry.class.getResource("calculator.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 350, 400);
+        scene.setOnKeyPressed(keyEvent -> {
+            // Calculate result when enter is pressed.
+            if (keyEvent.getCode() == KeyCode.ENTER) {
+                CalculatorController controller = fxmlLoader.getController();
+                controller.getEqualsButton().fire();
+            }
+        });
+
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.show();
 
-        // stage.setResizable(false);
     }
 
     public static void main(String[] args) {
