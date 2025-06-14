@@ -4,6 +4,7 @@ module xyz.itseve.javacalc {
 
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires org.jetbrains.annotations;
 
     opens xyz.itseve.javacalc to javafx.fxml;
     exports xyz.itseve.javacalc;
