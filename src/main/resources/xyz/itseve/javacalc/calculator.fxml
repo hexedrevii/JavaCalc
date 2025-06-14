@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.itseve.javacalc.CalculatorController">
    <children>
       <VBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="600.0">
          <children>
@@ -17,7 +17,7 @@
                   <Insets right="10.0" top="5.0" />
                </VBox.margin>
             </Label>
-            <TextField alignment="TOP_CENTER" editable="false" VBox.vgrow="NEVER">
+            <TextField fx:id="output" alignment="BOTTOM_RIGHT" editable="false" VBox.vgrow="NEVER">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -38,25 +38,25 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" text="4" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" text="7" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" text="0" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" text="-" />
-            <Button mnemonicParsing="false" text="/" GridPane.columnIndex="3" />
-            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="^" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="4" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="7" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" text="+" GridPane.columnIndex="2" onAction="#numberClick" />
+            <Button mnemonicParsing="false" onAction="#numberClick" text="0" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" text="-" onAction="#numberClick" />
+            <Button mnemonicParsing="false" text="/" GridPane.columnIndex="3" onAction="#numberClick" />
+            <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" onAction="#numberClick" />
+            <Button mnemonicParsing="false" text="^" GridPane.columnIndex="3" GridPane.rowIndex="2" onAction="#numberClick" />
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <children>
-                  <Button mnemonicParsing="false" text="=" />
-                  <Button mnemonicParsing="false" text="C">
+                  <Button mnemonicParsing="false" text="=" onAction="#equalClick" />
+                  <Button mnemonicParsing="false" text="C" onAction="#clearClick" >
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
