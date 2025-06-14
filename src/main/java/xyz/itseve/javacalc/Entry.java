@@ -18,7 +18,7 @@ public class Entry extends Application {
         stage.setScene(scene);
         stage.show();
 
-        stage.setResizable(false);
+        // stage.setResizable(false);
     }
 
     public static void main(String[] args) {
