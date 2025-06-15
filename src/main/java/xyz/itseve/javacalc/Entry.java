@@ -7,6 +7,7 @@ import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Entry extends Application {
     @Override
@@ -22,6 +23,13 @@ public class Entry extends Application {
                 controller.getEqualsButton().fire();
             }
         });
+
+        // Add CSS styles.
+        scene.getStylesheets().add(
+            Objects.requireNonNull(
+                Entry.class.getResource("calculator.css")
+            ).toExternalForm()
+        );
 
         // Set window minimum size.
         stage.setMinHeight(400);

@@ -1,0 +1,23 @@
+.button.enter {
+    -fx-background-color: #6BBF59;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-radius: 20px;
+}
+
+.button.danger {
+    -fx-background-color: #D2122E;
+    -fx-text-fill: white;
+}
+
+.button.round-left {
+    -fx-background-radius: 20px 0 0 20px;
+    -fx-border-radius: 20px 0 0 20px;
+}
+
+.button.round-right {
+    -fx-background-radius: 0 20px 20px 0;
+    -fx-border-radius: 0 20px 20px 0;
+}
