@@ -3,8 +3,7 @@
 A basic Java calculator program. Made in JavaFX.
 
 # Showcase
-> [!INFO]
-> Todo.
+![calculator](./img/showcase.png)
 
 # Install
 > [!INFO]
