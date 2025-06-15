@@ -54,7 +54,6 @@ public class CalculatorController implements Initializable {
             output.setText("" + expr.evaluate());
         } catch (Exception e) {
             output.setText("Mathematical error.");
-
             nextDelete = true;
         }
     }
